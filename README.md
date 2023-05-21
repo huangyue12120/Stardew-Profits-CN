@@ -3,7 +3,7 @@
 由于英语看不习惯，所以我将[Thorinair](https://github.com/Thorinair)的[利润计算器](https://github.com/Thorinair/Stardew-Profits)做了简单的中文本地化。仅用作个人使用，侵删。
 
 # Declaration
-As I am not used to reading English, I have localized Thorinair's [Profit Calculator](https://thorinair.github.io/Stardew-Profits/) into simple Chinese. For personal use only, delete if necessary.
+As I am not used to reading English, I have localized [Thorinair](https://github.com/Thorinair)'s [Profit Calculator](https://github.com/Thorinair/Stardew-Profits) into Simplified Chinese. For personal use only, delete if necessary.
 
 # 星露谷物语利润计算器
 利润计算器是一个计算和绘图工具，旨在帮助游戏 “星露谷物语” 的玩家轻松地计算和比较他们在不同条件下种植不同作物的利润。
