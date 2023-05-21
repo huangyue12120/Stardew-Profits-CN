@@ -1,0 +1,130 @@
+﻿
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="A Stardew Valley crop profits calculator and visualizer." />
+		<title>利润计算器——帮助</title>
+		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>  
+		<link rel="stylesheet" type="text/css" href="style/style.css" />
+		<link rel="shortcut icon" type="image/png" href="img/ancientfruit.png">
+	</head>
+	<body>
+
+		<div class="title">
+		</div>
+
+		<div class="help">
+			<h1>利润计算器</h1>
+			<p>利润计算器是一个计算和绘图工具，旨在帮助游戏 “星露谷物语” 的玩家轻松地计算和比较他们在不同条件下种植不同作物的利润。</p>
+			<h1>用法</h1>
+			<p>该工具分为两个部分：图形框和选项框。选项框允许用户快速更改参数，然后在图形上反映出来。</p>
+			<h2>图形框</h2>
+			<p>图形框根据用户设置的选项显示实时渲染的图形。条形的数量会根据设定的条件(如不同的季节)而变化。黄金的利润可以从侧面看作是一种规模。这张图表同时显示了利润和亏损。此外，如果选择了种子购买损失，则损失将以橙色显示，如果选择了化肥购买损失，则损失将以棕色显示。将鼠标悬停在作物上，将显示一个工具提示，其中包含有关利润，损失等信息。按下作物将打开该作物的官方Wiki页面。</p>
+			<h2>选项框</h2>
+			<p>下表描述了所有选项以及它们如何影响图形。</p>
+			<table cellspacing="4">
+  				<col width="25%">
+				<thead>
+					<tr>
+						<th>选项</th>
+						<th>描述</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>季节</td>
+						<td>改变作物的季节。这将影响图表中显示的作物列表，因为只有某些作物在特定季节生长。此外，所有季节都有最多28天的计算限制。<em>温室</em>的季节季节没有这样的限制，显示所有作物，并允许长达10万天。</td>
+					</tr>
+                    <tr>
+                        <td>跨季节</td>
+                        <td>如果选择了这一点，在计算时将考虑到季节变化时不会死亡的作物。</td>
+                    </tr>
+					<tr>
+						<td>天数</td>
+						<td>指定用于计算的天数。持续时间越短，作物的生长时间就越少。如果设置的值过低，某些作物甚至可能没有时间生长一次。除非在<em>季节</em>下选择了<em>温室</em>，否则此选项将设置为只读。</td>
+					</tr>
+					<tr>
+						<td>当前天数</td>
+						<td>所选季节内的当前日期。该值从前面的<em>天数</em>中减去，以计算作物有多少天的生长时间。如果在<em>季节</em>下选择了<em>温室</em>，则此选项将被隐藏。</td>
+					</tr>
+					<tr>
+						<td>产品类型</td>
+						<td>指定收获后要出售的产品类型。默认情况下，所有作物都作为原材料收获并出售。此选项考虑了普通/银/金的比例，<em>耕种</em>技能等级以及一些附加技能。其他选项允许您选择两种不同的加工方式。</td>
+					</tr>
+					<tr>
+						<td>作物数量</td>
+						<td>这可以控制玩家种植的作物数量。</td>
+					</tr>
+					<tr>
+						<td>最大买种子资金</td>
+						<td>玩家储蓄中可用的最大资金。这将限制在购买种子时可以种植的作物数量。</td>
+					</tr>
+					<tr>
+						<td>平均利润</td>
+						<td>勾选此选项后，将只计算每天的平均利润。平均值是通过之前设置的天数计算得出的。</td>
+					</tr>
+					<tr>
+						<td>种子来源</td>
+						<td>种子可以从不同来源处获得，不同的来源也总是有不同的成本价格。此选项允许您选择图表应查找哪些来源。请注意，图表上始终会显示最便宜的选项。取消勾选某些选项可能会隐藏不再可获得的作物。</td>
+					</tr>
+					<tr>
+						<td>是否购买种子</td>
+						<td>选择这一选项意味着玩家将从其中一个来源购买种子，而不是自己生产种子(例如使用<em>种子生产器</em>)。每一种作物都会显示一个橙色条，显示选择后的种子损失情况。</td>
+					</tr>
+					<tr>
+						<td>肥料</td>
+						<td>不同的肥料可以加速生长或者增加普通/银/金比例。肥料的种类可以在这里选择。</td>
+					</tr>
+					<tr>
+						<td>是否购买肥料</td>
+						<td>选择这一选项意味着玩家将从其中一个来源购买肥料，而不是自己生产肥料(如制造)。每一种作物都会显示一个棕色的条形图，显示选择后的肥料损失情况。</td>
+					</tr>
+					<tr>
+						<td>生长激素来源</td>
+						<td>桑迪在绿洲中售卖的高级生长激素比皮埃尔卖的还便宜。这一选项允许选择购买所使用的价格。除非选择了购买肥料并在肥料中选择高级生长激素，否则这一选项是禁用的。</td>
+					</tr>
+					<tr>
+						<td>耕种等级</td>
+						<td>玩家的<em>耕种</em>技能等级。这对农作物的普通/银/金比例有直接影响，但对工匠物品没有影响。</td>
+					</tr>
+					<tr>
+						<td>5级技能</td>
+						<td>当玩家<em>耕种</em>技能达到5级时，可以使用<em>农耕人</em>技能。除非当前技能等级设置正确，否则这一选项是禁用的。</td>
+					</tr>
+					<tr>
+						<td>10级技能</td>
+						<td>当玩家<em>耕种</em>技能达到10级时，可以获得特定技能。除非当前技能等级设置正确并且5级技能选择了<em>农耕人</em>，否则这一选项是禁用的。</td>
+					</tr>
+                    <tr>
+                        <td>觅食等级</td>
+                        <td>玩家的<em>觅食</em>技能等级。这对采集品的普通/银/金比例有直接影响，但对工匠物品没有影响。</td>
+                    </tr>
+                    <tr>
+                        <td>5级技能</td>
+                        <td>当玩家<em>觅食</em>技能达到5级时，可以使用<em>收集者</em>技能。除非当前技能等级设置正确，否则这一选项是禁用的。</td>
+                    </tr>
+                    <tr>
+                        <td>10级技能</td>
+                        <td>当玩家<em>觅食</em>技能达到10级时，可以使用<em>植物学家</em>技能。除非当前技能等级设置正确并且5级技能选择了<em>收集者</em>，否则这一选项是禁用的。</td>
+                    </tr>
+					<tr>
+						<td>显示额外信息</td>
+						<td>勾选后将在鼠标移动到图表中的作物上时显示关于每个作物的额外详细信息。</td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<h1>联系方式</h1>
+			<p>你可以通过以下方式与作者联系： <a href="https://twitter.com/thorinair_music" target="_blank">Twitter</a> | <a href="https://www.reddit.com/user/Thorinair/" target="_blank">Reddit</a> | <a href="https://www.youtube.com/user/Thorinair" target="_blank">YouTube</a> | <a href="http://thorinair.deviantart.com/" target="_blank">deviantArt</a>
+			<br />项目源代码在 <a href="https://github.com/Thorinair/Stardew-Profits" target="_blank">GitHub</a>可以找到。</p>
+			<div id="divhelp"><a href="index.html">返回</a></div>
+		</div>
+
+		<div class="footer">
+			<p><a href="http://stardewvalley.net/" target="_blank">星露谷物语 v1.5.4</a> &copy; <a href="https://twitter.com/ConcernedApe" target="_blank">ConcernedApe</a> | 网站设计者 <a href="https://twitter.com/thorinair_music" target="_blank">Thorinair</a> | v1.4.3</p>
+		</div>
+
+		<script src="js/time.js"> </script>
+	</body>
+</html>
